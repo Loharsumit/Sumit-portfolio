@@ -1,0 +1,179 @@
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cardHeaderBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background: radial-gradient(circle at 30% 50%, currentColor, transparent 70%);
+}
+
+.cardPeriod {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  position: relative;
+  margin-top: 0.25rem;
+}
+
+.cardBody {
+  padding: 1.5rem 2rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.cardTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.techTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--accent-1);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.cardLinks {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.cardLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+
+.cardLink:hover {
+  color: var(--accent-1);
+}
+
+/* Other projects */
+.otherTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.otherGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.otherCard {
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.otherCardIcon {
+  font-size: 1.5rem;
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+
+.otherCardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.otherCardDesc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.otherCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.otherTech {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.otherTechTag {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .otherGrid {
+    grid-template-columns: 1fr;
+  }
+}

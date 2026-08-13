@@ -1,0 +1,105 @@
+.wrapper {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-4deg); }
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.email {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.email::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  border-radius: 3px;
+}
+
+.email:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0 auto 2rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.socialLink {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.socialLink:hover {
+  color: #fff;
+  background: var(--accent-gradient);
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px -8px rgba(56, 189, 248, 0.5);
+}
