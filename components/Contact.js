@@ -23,6 +23,15 @@ export default function Contact() {
             {personalInfo.email}
           </a>
 
+          <div className={styles.metaRow}>
+            <span className={styles.metaPill}>
+              <i className="fas fa-location-dot"></i> {personalInfo.location}
+            </span>
+            <a href={`tel:${personalInfo.phone}`} className={styles.metaPill}>
+              <i className="fas fa-phone"></i> {personalInfo.phone}
+            </a>
+          </div>
+
           <div className={styles.ctas}>
             <a
               href={`mailto:${personalInfo.email}`}

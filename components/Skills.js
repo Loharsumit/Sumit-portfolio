@@ -1,5 +1,6 @@
 import styles from "./Skills.module.css";
 import { skills } from "@/data/portfolio";
+import TechIcon from "./TechIcon";
 
 export default function Skills() {
   return (
@@ -25,7 +26,9 @@ export default function Skills() {
               <div className={styles.skillList}>
                 {category.items.map((skill) => (
                   <div key={skill.name} className={styles.skillItem}>
-                    <span className={styles.skillIcon}>{skill.icon}</span>
+                    <span className={styles.skillIcon}>
+                      <TechIcon name={skill.name} size={22} />
+                    </span>
                     <div className={styles.skillInfo}>
                       <div className={styles.skillName}>{skill.name}</div>
                       <div className={styles.skillExp}>{skill.experience}</div>
