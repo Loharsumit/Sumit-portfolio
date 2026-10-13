@@ -1,7 +1,14 @@
+"use client";
 import styles from "./Contact.module.css";
 import { personalInfo, socialLinks } from "@/data/portfolio";
+import { getGmailComposeUrl, openMail } from "@/utils/mail";
 
 export default function Contact() {
+  const handleMailClick = (e, subject = "Project Inquiry - Sumit Lohar") => {
+    e.preventDefault();
+    openMail(personalInfo.email, subject);
+  };
+
   return (
     <section className="section" id="contact">
       <div className="container">
@@ -17,8 +24,15 @@ export default function Contact() {
           </p>
 
           <a
-            href={`mailto:${personalInfo.email}`}
+            href={getGmailComposeUrl(
+              personalInfo.email,
+              "Getting in Touch - Sumit Lohar"
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => handleMailClick(e, "Getting in Touch - Sumit Lohar")}
             className={`gradient-text ${styles.email}`}
+            title="Click to compose email"
           >
             {personalInfo.email}
           </a>
@@ -34,7 +48,13 @@ export default function Contact() {
 
           <div className={styles.ctas}>
             <a
-              href={`mailto:${personalInfo.email}`}
+              href={getGmailComposeUrl(
+                personalInfo.email,
+                "Project Inquiry - Sumit Lohar"
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => handleMailClick(e, "Project Inquiry - Sumit Lohar")}
               className="btn btn-primary"
             >
               <i className="fas fa-paper-plane"></i> Send a Mail
@@ -80,9 +100,16 @@ export default function Contact() {
               <i className="fas fa-globe"></i>
             </a>
             <a
-              href={`mailto:${personalInfo.email}`}
+              href={getGmailComposeUrl(
+                personalInfo.email,
+                "Hello Sumit - Portfolio Inquiry"
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => handleMailClick(e, "Hello Sumit - Portfolio Inquiry")}
               className={styles.socialLink}
               aria-label="Email"
+              title="Send an email"
             >
               <i className="fas fa-envelope"></i>
             </a>

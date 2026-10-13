@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import { personalInfo } from "@/data/portfolio";
+import { getGmailComposeUrl, openMail } from "@/utils/mail";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -28,6 +30,12 @@ export default function Navbar() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleHireClick = (e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    openMail(personalInfo.email, "Opportunity / Hiring Inquiry - Sumit Lohar");
+  };
+
   return (
     <>
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
@@ -49,7 +57,13 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="mailto:loharsumit693@gmail.com"
+                href={getGmailComposeUrl(
+                  personalInfo.email,
+                  "Opportunity / Hiring Inquiry - Sumit Lohar"
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleHireClick}
                 className={`btn btn-primary ${styles.navCta}`}
               >
                 Hire Me
@@ -87,6 +101,19 @@ export default function Navbar() {
             {item.label}
           </a>
         ))}
+        <a
+          href={getGmailComposeUrl(
+            personalInfo.email,
+            "Opportunity / Hiring Inquiry - Sumit Lohar"
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleHireClick}
+          className="btn btn-primary"
+          style={{ marginTop: "1rem", padding: "0.8rem 2.2rem" }}
+        >
+          Hire Me
+        </a>
       </div>
     </>
   );
