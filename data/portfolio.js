@@ -14,7 +14,7 @@ export const personalInfo = {
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/sumit-lohar-6844a917a/",
   github: "https://github.com/Loharsumit",
-  portfolio: "https://portfolio-react-flax-eta.vercel.app/",
+  portfolio: "https://sumit-portfolio-jade-beta.vercel.app/",
 };
 
 export const skills = [
